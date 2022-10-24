@@ -6,11 +6,9 @@ $("Document").ready(function(){
         Dadopara = !Dadopara
         console.log(Dadopara)
         if(Dadopara){
-            $("#DadoparaColor").attr("class","blanco")
-            $("#DadoparaTexto").attr("value","Evento Afecta a: blanco")
+            $("#divCard").attr("class","container blanco")
         }else{
-            $("#DadoparaColor").attr("class","negro")
-            $("#DadoparaTexto").attr("value","Evento Afecta a: negro")
+            $("#divCard").attr("class","container negro")
         }
     }
 

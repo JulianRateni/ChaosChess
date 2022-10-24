@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style src="css/styles.css"></style>
     <title>ChaosChess</title>
 </head>
-<body>
+<body style="background-color: green;">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>    
-    <script src="css/styles.css"></script>
     <script src="js/Codigo.js"></script>
+    <style>
+        .container{
+            background-color: brown;
+            border-radius: 15px;
+            width: 421px ;
+            height: 614px;
+            margin: 15px;
+        }
 
+        .blanco{
+            border: 20px solid whitesmoke;
+        }
+
+        .negro{
+            border: 20px solid black;
+        }
+    </style>
     <button id="BtnDado">Probar Dado</button> <br>
     Evento: <br>
-    <div class="blanco" id="DadoparaColor"> <input type="text" id="DadoparaTexto" value="Evento Afecta a: blanco" disabled> </div> <br>
-    <img id="Eventoimg" src="">
+    <div id="divCard" class="container">
+        <img id="Eventoimg" src="">
+    </div>
 </body>
 </html>
