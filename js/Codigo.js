@@ -6,11 +6,11 @@ $("Document").ready(function(){
         Dadopara = !Dadopara
         console.log(Dadopara)
         if(Dadopara){
-            $("#Dadopara").attr("class","blanco")
-            $("#Dadopara").attr("Evento Afecta a: blanco")
+            $("#DadoparaColor").attr("class","blanco")
+            $("#DadoparaTexto").attr("value","Evento Afecta a: blanco")
         }else{
-            $("#Dadopara").attr("class","negro")
-            $("#Dadopara").attr("Evento Afecta a: negro")
+            $("#DadoparaColor").attr("class","negro")
+            $("#DadoparaTexto").attr("value","Evento Afecta a: negro")
         }
     }
 
