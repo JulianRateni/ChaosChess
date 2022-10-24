@@ -1,5 +1,6 @@
-$("#BtnDado").on("click",fncDado)
-
 function fncDado(){
     alert("AAAAAAAAA")
 }
+
+$("#BtnDado").on("click","fncDado");
+
