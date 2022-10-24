@@ -3,7 +3,7 @@ $("Document").ready(function(){
     
     function fncDado(){
         var Evento = D20Normal[Math.floor(Math.random()*78)]
-        $("#Eventoimg").attr("src","img/Eventos/"Evento+".jpg")
+        $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
     }
 
     $("#BtnDado").on("click",fncDado);
