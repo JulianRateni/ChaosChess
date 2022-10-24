@@ -7,8 +7,10 @@ $("Document").ready(function(){
         console.log(Dadopara)
         if(Dadopara){
             $("#Dadopara").attr("class","blanco")
+            $("#Dadopara").attr("Evento Afecta a: blanco")
         }else{
             $("#Dadopara").attr("class","negro")
+            $("#Dadopara").attr("Evento Afecta a: negro")
         }
     }
 

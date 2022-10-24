@@ -1,8 +1,8 @@
 .blanco{
-color: whitesmoke;
-text-decoration-color: black;
+background-color: whitesmoke;
+color: black;
 }
 .negro{
-color: black;
-text-decoration-color: whitesmoke;
+background-color: black;
+color: whitesmoke;
 }
