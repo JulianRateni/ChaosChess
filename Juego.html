@@ -21,22 +21,39 @@
             border: 20px solid black;
         }
 
+        .gris{
+            border: 20px solid gray;
+        }
+
         #Eventoimg{
             width: 316px;
             height: 461px;
         }
 
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .row{
+            width: fit-content;
+            margin-left: 5%;
+        }
+
         .Col1{
             background-color: crimson;
-            width: 33%;
+            width: fit-content;
             float: left;
-            margin: 10px;
+            margin-top: 5%;
         }
         .Col2{
             background-color: aqua;
-            width: 66%;
+            width: auto;
             float: left;
-            margin: 10px;
+            margin-top: 5%;
+        }
+        .tablero{
+            margin-left: 20%;
         }
     </style>
     <title>ChaosChess</title>
@@ -44,17 +61,19 @@
 <body style="background-color: green;">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>    
     <script src="js/Codigo.js"></script>
-    <div class="Col1">
-        <!-- EVENTOS-->
-        <button id="BtnDado">Probar Dado</button>
-        <p style="font-size: 25px; font-family: Arial; font-weight: bolder;">Evento:</p>
-        <div id="divCard" class="container">
-            <img id="Eventoimg" src="img/Eventos/0.png">
+    <div class="row">
+        <div class="Col1">
+            <!-- EVENTOS-->
+            <button id="BtnDado">Probar Dado</button>
+            <p style="font-size: 25px; font-family: Arial; font-weight: bolder;">Evento:</p>
+            <div id="divCard" class="container gris">
+                <img id="Eventoimg" src="img/Eventos/0.png">
+            </div>
         </div>
-    </div>
-    <div class="Col2">
-        <!-- TABLERO -->
-        <img class="tablero" src="img/Tablero.png" alt="">
+        <div class="Col2">
+            <!-- TABLERO -->
+            <img class="tablero" src="img/Tablero.png" alt="">
+        </div>
     </div>
 </body>
 </html>
