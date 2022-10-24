@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style src="css/styles.css"></style>
-    <title>ChaosChess</title>
-</head>
-<body style="background-color: green;">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>    
-    <script src="js/Codigo.js"></script>
     <style>
         .container{
             background-color: rgb(112, 52, 2);
@@ -31,11 +25,36 @@
             width: 316px;
             height: 461px;
         }
+
+        .Col1{
+            background-color: crimson;
+            width: 33%;
+            float: left;
+            margin: 10px;
+        }
+        .Col2{
+            background-color: aqua;
+            width: 66%;
+            float: left;
+            margin: 10px;
+        }
     </style>
-    <button id="BtnDado">Probar Dado</button> <br>
-    <p style="font-size: 25px; font-family: Arial; font-weight: bolder;">Evento:</p>
-    <div id="divCard" class="container">
-        <img id="Eventoimg" src="">
+    <title>ChaosChess</title>
+</head>
+<body style="background-color: green;">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>    
+    <script src="js/Codigo.js"></script>
+    <div class="Col1">
+        <!-- EVENTOS-->
+        <button id="BtnDado">Probar Dado</button>
+        <p style="font-size: 25px; font-family: Arial; font-weight: bolder;">Evento:</p>
+        <div id="divCard" class="container">
+            <img id="Eventoimg" src="img/Eventos/0.png">
+        </div>
+    </div>
+    <div class="Col2">
+        <!-- TABLERO -->
+        <img class="tablero" src="img/Tablero.png" alt="">
     </div>
 </body>
 </html>
