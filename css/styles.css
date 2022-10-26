@@ -87,7 +87,7 @@ body{
         padding: 20px;
         border-radius: 7px;
         background: none;
-        border: solid rgb(31, 30, 28);
+        
     }
 
     #Reloj{
@@ -102,6 +102,11 @@ body{
         color: rgb(180, 6, 6);
         background-color: azure;
         border: solid 3px ;
+    }
+
+    #TurnoDe{
+        background: none;
+        color: rgba(132, 9, 214, 0.705);
     }
 
 /*Fin de Reloj*/
