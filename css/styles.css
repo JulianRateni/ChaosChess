@@ -28,7 +28,7 @@ body{
 }
 
 .gris{
-    border: 20px solid gray;
+    border: 20px solid rgb(253, 224, 127);
 }
 
 #Eventoimg{
@@ -55,6 +55,7 @@ body{
     #Event{
         float: right;
         margin-right: 5%;
+        color: rgb(41, 0, 1);
     }
 
 /*Columnas*/
@@ -62,7 +63,7 @@ body{
     .Col1{
         background-color: rgb(135, 67, 29);
         width: fit-content;
-        height: 680px;
+        height: 650px;
 
         float: left;
 
@@ -79,7 +80,7 @@ body{
         float: left;
         background-color: rgb(135, 67, 29);
         width: 650px;
-        height: 681px;
+        height: 650px;
         padding-top: 0%;
         margin-top: 5%;
         margin-right: 1%;
@@ -115,16 +116,16 @@ body{
         font-size: 70px;
         padding-left: 15px;
         border-radius: 45%;
-        color: rgb(180, 6, 6);
-        background-color: azure;
+        color: rgb(41, 0, 1);
+        background-color: rgb(200, 121, 65);
         box-shadow: 5px 5px  rgb(41, 41, 41);
-        border: solid 3px ;
+        border: solid 3px rgb(41, 0, 1);
     }
 
     #TurnoDe{
         width: 171px;
         background: none;
-        color: rgba(160, 58, 228, 0.705);
+        color: rgb(135, 67, 29);
         text-align: center;
         box-shadow: 5px 5px  rgb(41, 41, 41);
         font-size: 15px;
