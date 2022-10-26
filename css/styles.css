@@ -99,9 +99,9 @@ body{
         font-size: 70px;
         padding-left: 15px;
         border-radius: 45%;
-        color: brown;
+        color: rgb(180, 6, 6);
         background-color: azure;
-        border: solid 2px ;
+        border: solid 3px ;
     }
 
 /*Fin de Reloj*/
