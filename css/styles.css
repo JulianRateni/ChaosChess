@@ -32,7 +32,7 @@ body{
 }
 
 .row{
-    width: fit-content;
+    width: 100%;
     margin-left: 1%;
 }
 
@@ -53,15 +53,18 @@ body{
 .Col2{
     float: right;
     background-color: rgb(3, 134, 10);
-    width: 66%;
-    
+    width: 650px;
+    height: 681px;
+    padding-top: 0%;
     margin-top: 5%;
-    height: 680px;
+    margin-right: 2%;
+    
     border: 5px solid rgba(153, 15, 15, 0.836);
     border-radius: 1.5%;
 }
 .tablero{
-    margin-left: 5%;
+  margin-top: 25px;
+  margin-left: 25px;
 }
 
 #BtnDado{
@@ -69,6 +72,36 @@ body{
     padding: 10px;
 }
 
-body{
-    width: 1300px;
+#Event{
+    float: right;
+    margin-right: 5%;
 }
+
+/*Reloj*/
+   
+    #time{
+        width: 180px;
+        float: left;
+        margin-top: 20%;
+        margin-left: 1%;
+        padding: 20px;
+        border-radius: 7px;
+        background: none;
+        border: solid rgb(31, 30, 28);
+    }
+
+    #Reloj{
+        width: 150px;
+        height: 150px;
+        margin-left: 3.5px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 70px;
+        padding-left: 15px;
+        border-radius: 45%;
+        color: brown;
+        background-color: azure;
+        border: solid 2px ;
+    }
+
+/*Fin de Reloj*/
