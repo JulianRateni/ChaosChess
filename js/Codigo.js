@@ -43,7 +43,7 @@ $("Document").ready(function(){
     });
 
     function FinTurno(){
-        if(tiempo == 0){
+        if(tiempo == ":("){
             alert("Se te acabo el tiempo !!")
         }
         tiempo = 30.0
@@ -58,9 +58,9 @@ $("Document").ready(function(){
             let idIntervalo = setInterval(function(){
                 if(tiempo <= 0){
                     clearInterval(idIntervalo);
-                    tiempo = 0
+                    tiempo = `:(`
                     $("#Reloj").val(tiempo)
-                    FinTurno();
+                    setTimeout(FinTurno,100);
                 }
                 else{
                     tiempo -= 0.01
