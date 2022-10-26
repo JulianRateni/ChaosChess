@@ -1,6 +1,7 @@
+
 $("Document").ready(function(){
     const D20Normal = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20]
-    var Dadopara = true
+    var Dadopara = false
 
     const turnos = ["Blanco", "Negro", "Dado"]
     var deQuien = 0
@@ -19,28 +20,32 @@ $("Document").ready(function(){
     var tiempo = parseInt($("#Reloj").val())
 
 
-    function fncCambioDado(){
+    function CambioDado(){
         Dadopara = !Dadopara
-        console.log(Dadopara)
-        if(Dadopara){
-            $("#divCard").attr("class","container blanco")
-        }else{
-            $("#divCard").attr("class","container negro")
-        }
         FinTurno();
     }
 
     function TurnoDado(){
         var Evento = D20Normal[Math.floor(Math.random()*78)]
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
+        if(Dadopara){
+            $("#divCard").attr("class","container blanco")
+        }else{
+            $("#divCard").attr("class","container negro")
+        }
+        setTimeout(function(){alert("hace de cuenta que hace el evento seleccionado");},200)
 
-        fncCambioDado();
+        CambioDado();
     }
 
     $("#BtnDado").on("click",ComienzoTurno);
 
     function FinTurno(){
-
+        if(tiempo == 0){
+            alert("Se te acabo el tiempo !!")
+            tiempo = 30
+            $("#Reloj").val(tiempo)
+        }
         deQuien++
     }
 
