@@ -4,10 +4,12 @@
     width: 316px;
     height: 461px;
     margin: 15px;
+    
 }
 
 .blanco{
     border: 20px solid whitesmoke;
+
 }
 
 .negro{
@@ -38,13 +40,20 @@ body{
     width: fit-content;
     float: left;
     margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 1.5%;
 }
 .Col2{
-    background-color: aqua;
+    background-color: rgb(3, 134, 10);
     width: auto;
     float: left;
     margin-top: 5%;
 }
 .tablero{
     margin-left: 20%;
+}
+
+#BtnDado{
+    margin: 5%;
+    padding: 10px;
 }
