@@ -50,7 +50,7 @@ $("Document").ready(function(){
     }
 
     function TurnoJugador(Color){
-        $("#TurnoDe")
+        $("#TurnoDe").val("Turno de: "+Color);
         FinTurno();
     }
 
