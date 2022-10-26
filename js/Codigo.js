@@ -46,7 +46,7 @@ $("Document").ready(function(){
         if(tiempo == 0){
             alert("Se te acabo el tiempo !!")
         }
-        tiempo = 30
+        tiempo = 30.0
         $("#Reloj").val(tiempo)
         deQuien++
         ComienzoTurno();
@@ -54,16 +54,20 @@ $("Document").ready(function(){
 
     function TurnoJugador(Color){
         $("#TurnoDe").val("Turno de: "+Color);
-        let idIntervalo = setInterval(function(){
-            if(tiempo == 0){
-                clearInterval(idIntervalo);
-                FinTurno();
-            }
-            else{
-                tiempo--
-                $("#Reloj").val(tiempo)
-            }
-        },1000)
+        setTimeout(function(){
+            let idIntervalo = setInterval(function(){
+                if(tiempo <= 0){
+                    clearInterval(idIntervalo);
+                    tiempo = 0
+                    $("#Reloj").val(tiempo)
+                    FinTurno();
+                }
+                else{
+                    tiempo -= 0.01
+                    $("#Reloj").val(tiempo)
+                }
+            },10)
+        },500)
     }
 
 
