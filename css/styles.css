@@ -1,0 +1,50 @@
+.container{
+    background-color: rgb(112, 52, 2);
+    border-radius: 15px;
+    width: 316px;
+    height: 461px;
+    margin: 15px;
+}
+
+.blanco{
+    border: 20px solid whitesmoke;
+}
+
+.negro{
+    border: 20px solid black;
+}
+
+.gris{
+    border: 20px solid gray;
+}
+
+#Eventoimg{
+    width: 316px;
+    height: 461px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.row{
+    width: fit-content;
+    margin-left: 5%;
+}
+
+.Col1{
+    background-color: crimson;
+    width: fit-content;
+    float: left;
+    margin-top: 5%;
+}
+.Col2{
+    background-color: aqua;
+    width: auto;
+    float: left;
+    margin-top: 5%;
+}
+.tablero{
+    margin-left: 20%;
+}
