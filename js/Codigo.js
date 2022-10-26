@@ -4,7 +4,6 @@ $("Document").ready(function(){
 
     const turnos = ["Blanco", "Negro", "Dado"]
     var deQuien = 0
-    var ciclosHechos = 0
 
     const tablero = [
     [0,0,0,0,0,0,0,0],
@@ -28,6 +27,7 @@ $("Document").ready(function(){
         }else{
             $("#divCard").attr("class","container negro")
         }
+        FinTurno();
     }
 
     function TurnoDado(){
@@ -37,28 +37,28 @@ $("Document").ready(function(){
         fncCambioDado();
     }
 
-    $("#BtnDado").on("click",TurnoDado);
+    $("#BtnDado").on("click",ComienzoTurno);
 
     function FinTurno(){
 
         deQuien++
-        ComienzoTurno();
     }
 
     function TurnoJugador(Color){
-
+        alert('Turno del jugador '+ Color);
+        FinTurno();
     }
 
 
     function ComienzoTurno(){
         if(deQuien == 3){
-            ciclosHechos++
+            deQuien = 0
         }
-        deQuien = deQuien - ciclosHechos * 3
+        console.log(deQuien);
         switch(turnos[deQuien]){
-            case "Blanco":
-            case "Negro":
-            case "Dado":
+            case "Blanco": TurnoJugador("Blanco"); break
+            case "Negro": TurnoJugador("Negro"); break
+            case "Dado": TurnoDado(); break
         }
     }
 
