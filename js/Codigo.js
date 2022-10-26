@@ -21,3 +21,4 @@ $("Document").ready(function(){
 
     $("#BtnDado").on("click",fncDado);
 });
+//a
