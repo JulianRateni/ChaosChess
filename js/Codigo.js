@@ -2,7 +2,6 @@
 $("Document").ready(function(){
     const D20Normal = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20]
     var Dadopara = false
-
     const turnos = ["Blanco", "Negro", "Dado"]
     var deQuien = 0
 
@@ -38,20 +37,33 @@ $("Document").ready(function(){
         CambioDado();
     }
 
-    $("#BtnDado").on("click",ComienzoTurno);
+    $("#BtnDado").on("click",function(){
+        $(this).prop("disabled", true)
+        ComienzoTurno();
+    });
 
     function FinTurno(){
         if(tiempo == 0){
             alert("Se te acabo el tiempo !!")
-            tiempo = 30
-            $("#Reloj").val(tiempo)
         }
+        tiempo = 30
+        $("#Reloj").val(tiempo)
         deQuien++
+        ComienzoTurno();
     }
 
     function TurnoJugador(Color){
         $("#TurnoDe").val("Turno de: "+Color);
-        FinTurno();
+        let idIntervalo = setInterval(function(){
+            if(tiempo == 0){
+                clearInterval(idIntervalo);
+                FinTurno();
+            }
+            else{
+                tiempo--
+                $("#Reloj").val(tiempo)
+            }
+        },1000)
     }
 
 
