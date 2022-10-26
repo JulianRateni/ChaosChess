@@ -28,6 +28,7 @@ body{
 }
 
 .gris{
+    margin-top: 15%;
     border: 20px solid rgb(253, 224, 127);
 }
 
@@ -48,13 +49,20 @@ body{
 /*Temporal*/
 
     #BtnDado{
-        margin: 5%;
-        padding: 10px;
+        width: 180px;
+        margin-top: 5%;
+        background: none;
+        color: rgb(135, 67, 29);
+        text-align: center;
+        box-shadow: 5px 5px 2px 2px rgb(41, 41, 41);
+        font-size: 15px;
+        font-weight: bold;
+
     }
 
     #Event{
-        float: right;
-        margin-right: 5%;
+        float: left;
+        margin-left: 5%;
         color: rgb(41, 0, 1);
     }
 
@@ -84,7 +92,7 @@ body{
         padding-top: 0%;
         margin-top: 5%;
         margin-right: 1%;
-        box-shadow: 5px 5px  rgb(41, 41, 41);
+        box-shadow: 5px 5px 3px 2px rgb(41, 41, 41);
         border: 5px solid rgb(41, 0, 1);
         border-radius: 1.5%;
     }
@@ -127,7 +135,7 @@ body{
         background: none;
         color: rgb(135, 67, 29);
         text-align: center;
-        box-shadow: 5px 5px  rgb(41, 41, 41);
+        box-shadow: 5px 5px 2px 2px rgb(41, 41, 41);
         font-size: 15px;
         font-weight: bold;
     }
