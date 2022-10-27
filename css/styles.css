@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
 }
-.row{
+.RowGrande{
     width: 100%;
     margin-left: 1%;
 }
@@ -128,9 +128,10 @@ body{
     .Col2{
         float: left;
         background-color: rgb(135, 67, 29);
-        width: 650px;
-        height: 650px;
+        width: 680px;
+        height: 680px;
         padding-top: 0%;
+        padding: 10px;
         margin-top: 5%;
         margin-right: 1%;
         box-shadow: 5px 5px 3px 2px rgb(41, 41, 41);
@@ -182,3 +183,23 @@ body{
     }
 
 /*Fin de Reloj*/
+
+/*Tablero*/
+ .col{
+    width: 85px;
+    float: left;
+    background-color: red;
+ } 
+ .espacio{
+    width: 85px;
+    height: 85px;
+    display: block;
+    padding: 0;
+    margin: 0;
+ }
+ .claro{
+    background-color: antiquewhite;
+ }
+ .oscuro{
+    background-color: darkslategray;
+ }
