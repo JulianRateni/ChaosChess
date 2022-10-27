@@ -22,20 +22,14 @@ $("Document").ready(function(){
   var y = 0
   var x = 0
 
-    
-    $(".espacio").on("click",function(){
-       y = $(this).attr("id").slice(0,1)
-       x = $(this).attr("id").slice(-1)
-      var piezaSel = $(this).html().slice(10,12)
-      console.log(piezaSel+" "+y+x)
-    })
-    
-
-
     function renderTablero(){
          for(y = 0; y < 8; y++){
             for(x = 0; x < 8; x++){
-                $("#"+y+x).html(`<img id="`+x+tablero[y][x]+`" src="img/Piezas/`+tablero[y][x]+`.png">` )
+                if(tablero[y][x] != "nd"){
+                    $("#"+y+x).html(`<img id="`+x+tablero[y][x]+`" src="img/Piezas/`+tablero[y][x]+`.png">`)
+                }else{
+                    $("#"+y+x).html(` `)
+                }
             }
         }
     }
@@ -44,7 +38,81 @@ $("Document").ready(function(){
 
     var tiempo = parseInt($("#Reloj").val())
 
+    $(".espacio").on("click",function(){
+        $(".resalto").removeClass("resalto")
+        $(".capturable").removeClass("capturable")
+        y = $(this).attr("id").slice(0,1)
+        x = $(this).attr("id").slice(-1)
+       var piezaSel = $(this).html().slice(10,13)
+       console.log(piezaSel+" "+y+x)
+       if(piezaSel.slice(0,2)!="nd"){
+         if(piezaSel.slice(1,2) == turnos[deQuien].slice(0,1)){
+             switch(piezaSel.slice(0,1)){
+                 case "P": movPeon(piezaSel.slice(1,3),y,x); break;
+                 case "C": movCaballo(y,x); break;
+                 case "A": movAlfil(y,x); break;
+                 case "T": movTorre(y,x); break;
+                 case "D": movDama(y,x); break;
+                 case "R": movRey(y,x); break;
+                 }
+         }
+       }
+     })
 
+     function movPeon(tipo,y,x){
+        console.log("#"+(y-(-1))+x)
+        if(tipo.slice(0,1) == "B"){
+            if($("#"+(y-1)+x).html()==` `){
+                $("#"+(y-1)+x).addClass("resalto")
+            }else{
+                $("#"+(y-1)+x).addClass("capturable")
+            }
+            if(tipo.slice(-1) == "C"){
+                if($("#"+(y-2)+x).html()==` `){
+                    $("#"+(y-2)+x).addClass("resalto")
+                }else{
+                    $("#"+(y-2)+x).addClass("capturable")
+                }
+            }
+        }
+        if(tipo.slice(0,1) == "N"){
+            if($("#"+(y-(-1))+x).html()==` `){
+                $("#"+(y-(-1))+x).addClass("resalto")
+            }else{
+                $("#"+(y-(-1))+x).addClass("capturable")
+            }
+            if(tipo.slice(-1) == "C"){
+                if($("#"+(y-(-2))+x).html()==` `){
+                    $("#"+(y-(-2))+x).addClass("resalto")
+                }else{
+                    $("#"+(y-(-2))+x).addClass("capturable")
+                }
+            }
+        }
+     }
+     function movCaballo(){
+
+
+     }
+     function movAlfil(){
+
+
+     }
+     function movTorre(){
+
+
+     }
+     function movDama(){
+
+
+     }
+     function movRey(){
+
+
+     }
+ 
+
+ 
     function CambioDado(){
         Dadopara = !Dadopara
         FinTurno();
