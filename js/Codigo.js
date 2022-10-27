@@ -31,12 +31,12 @@ $("Document").ready(function(){
     function renderTablero(){
          for(y = 0; y < 8; y++){
             for(x = 0; x < 8; x++){
-                $("#"+y+x).html(`<img id="" src="`+tablero[y][x]+`.png">` )
+                $("#"+y+x).html(`<img id="" src="img/Piezas/`+tablero[y][x]+`.png">` )
             }
         }
     }
 
-
+    renderTablero();
 
     var tiempo = parseInt($("#Reloj").val())
 
