@@ -5,16 +5,37 @@ $("Document").ready(function(){
     const turnos = ["Blanco", "Negro", "Dado"]
     var deQuien = 0
 
-    const tablero = [
-    [00,01,02,03,04,05,06,07],
-    [10,11,12,13,14,15,16,17],
-    [20,21,22,23,24,25,26,27],
-    [30,31,32,33,34,35,36,37],
-    [40,41,42,43,44,45,46,47],
-    [50,51,52,53,54,55,56,57],
-    [60,61,62,63,64,65,66,67],
-    [70,71,72,73,74,75,76,77]
+    var tablero = [
+    ["TN","CN","AN","DN","RN","AN","CN","TN"],
+    ["PNC","PNC","PNC","PNC","PNC","PNC","PNC","PNC"],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["PBC","PBC","PBC","PBC","PBC","PBC","PBC","PBC"],
+    ["TB","CB","AB","DB","RB","AB","CB","TB"]
     ]
+  /*                      y  x
+      console.log(tablero[7][7])
+  */
+  var y = 0
+  var x = 0
+
+    
+    $(".espacio").on("click",function(){
+        console.log("Y es: "+$(this).attr("id").slice(0,1)+" -- X es: "+$(this).attr("id").slice(-1))
+    })
+    
+
+
+    function renderTablero(){
+         for(y = 0; y < 8; y++){
+            for(x = 0; x < 8; x++){
+                $("#"+y+x).html(`<img id="" src="`+tablero[y][x]+`.png">` )
+            }
+        }
+    }
+
 
 
     var tiempo = parseInt($("#Reloj").val())

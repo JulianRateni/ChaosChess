@@ -203,3 +203,9 @@ body{
  .oscuro{
     background-color: darkslategray;
  }
+ .resalto{
+    background-color: greenyellow;
+ }
+ .capturable{
+    background-color: crimson;
+ }

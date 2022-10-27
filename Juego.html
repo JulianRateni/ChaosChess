@@ -26,31 +26,31 @@
             <input type="text" id="TurnoDe" value="Turno de: Blanco" disabled>
             <button class="third btn" id="BtnDado">Comenzar Partida</button>
         </div>
-        <div class="Col2">
+        <div class="Col2" onload="renderTablero();">
             <!-- TABLERO -->
             <div class="col">
-                <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div>
+                <div id="00" class="espacio claro"> </div> <div  id="10" class="espacio oscuro"> </div> <div id="20" class="espacio claro"> </div> <div  id="30" class="espacio oscuro"> </div> <div id="40" class="espacio claro"> </div> <div  id="50" class="espacio oscuro"> </div> <div id="60" class="espacio claro"> </div> <div  id="70" class="espacio oscuro"> </div>
             </div>
             <div class="col">
-                <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div>
+                <div id="01" class="espacio oscuro"> </div> <div id="11"  class="espacio claro"> </div> <div id="21" class="espacio oscuro"> </div> <div id="31"  class="espacio claro"> </div> <div id="41" class="espacio oscuro"> </div> <div id="51"  class="espacio claro"> </div> <div id="61" class="espacio oscuro"> </div> <div id="71"  class="espacio claro"> </div>
             </div>
             <div class="col">
-                <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div>
+                <div id="02" class="espacio claro"> </div> <div  id="12" class="espacio oscuro"> </div> <div id="22" class="espacio claro"> </div> <div  id="32" class="espacio oscuro"> </div> <div id="42" class="espacio claro"> </div> <div  id="52" class="espacio oscuro"> </div> <div id="62" class="espacio claro"> </div> <div  id="72" class="espacio oscuro"> </div>
             </div>
             <div class="col">
-                <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div>
+                <div id="03" class="espacio oscuro"> </div> <div id="13"  class="espacio claro"> </div> <div id="23" class="espacio oscuro"> </div> <div id="33"  class="espacio claro"> </div> <div id="43" class="espacio oscuro"> </div> <div id="53"  class="espacio claro"> </div> <div id="63" class="espacio oscuro"> </div> <div id="73"  class="espacio claro"> </div>
             </div>
             <div class="col">
-                <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div>
+                <div id="04" class="espacio claro"> </div> <div  id="14" class="espacio oscuro"> </div> <div id="24" class="espacio claro"> </div> <div  id="34" class="espacio oscuro"> </div> <div id="44" class="espacio claro"> </div> <div  id="54" class="espacio oscuro"> </div> <div id="64" class="espacio claro"> </div> <div  id="74" class="espacio oscuro"> </div>
             </div>
             <div class="col">
-                <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div>
+                <div id="05" class="espacio oscuro"> </div> <div id="15"  class="espacio claro"> </div> <div id="25" class="espacio oscuro"> </div> <div id="35"  class="espacio claro"> </div> <div id="45" class="espacio oscuro"> </div> <div id="55"  class="espacio claro"> </div> <div id="65" class="espacio oscuro"> </div> <div id="75"  class="espacio claro"> </div>
             </div>
             <div class="col">
-                <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div>
+                <div id="06" class="espacio claro"> </div> <div  id="16" class="espacio oscuro"> </div> <div id="26" class="espacio claro"> </div> <div  id="36" class="espacio oscuro"> </div> <div id="46" class="espacio claro"> </div> <div  id="56" class="espacio oscuro"> </div> <div id="66" class="espacio claro"> </div> <div  id="76" class="espacio oscuro"> </div>
             </div>
             <div class="col">
-                <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div> <div class="espacio oscuro"> </div> <div class="espacio claro"> </div>
+                <div id="07" class="espacio oscuro"> </div> <div id="17"  class="espacio claro"> </div> <div id="27" class="espacio oscuro"> </div> <div id="37"  class="espacio claro"> </div> <div id="47" class="espacio oscuro"> </div> <div id="57"  class="espacio claro"> </div> <div id="67" class="espacio oscuro"> </div> <div id="77"  class="espacio claro"> </div>
             </div>
         </div>
     </div>
