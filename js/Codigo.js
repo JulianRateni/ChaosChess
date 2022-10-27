@@ -8,22 +8,25 @@ $("Document").ready(function(){
     var tablero = [
     ["TN","CN","AN","DN","RN","AN","CN","TN"],
     ["PNC","PNC","PNC","PNC","PNC","PNC","PNC","PNC"],
-    ["v","v","v","v","v","v","v","v"],
-    ["v","v","v","v","v","v","v","v"],
-    ["v","v","v","v","v","v","v","v"],
-    ["v","v","v","v","v","v","v","v"],
+    ["nd","nd","nd","nd","nd","nd","nd","nd"],
+    ["nd","nd","nd","nd","nd","nd","nd","nd"],
+    ["nd","nd","nd","nd","nd","nd","nd","nd"],
+    ["nd","nd","nd","nd","nd","nd","nd","nd"],
     ["PBC","PBC","PBC","PBC","PBC","PBC","PBC","PBC"],
     ["TB","CB","AB","DB","RB","AB","CB","TB"]
     ]
   /*                      y  x
       console.log(tablero[7][7])
+      este comando devolveria "TB"
   */
   var y = 0
   var x = 0
 
     
     $(".espacio").on("click",function(){
-        console.log("Y es: "+$(this).attr("id").slice(0,1)+" -- X es: "+$(this).attr("id").slice(-1))
+      var espacioSel = $(this).attr("id")
+      var piezaSel = $(this).html().slice(10,12)
+      console.log(piezaSel+" "+espacioSel)
     })
     
 
@@ -31,7 +34,7 @@ $("Document").ready(function(){
     function renderTablero(){
          for(y = 0; y < 8; y++){
             for(x = 0; x < 8; x++){
-                $("#"+y+x).html(`<img id="" src="img/Piezas/`+tablero[y][x]+`.png">` )
+                $("#"+y+x).html(`<img id="`+x+tablero[y][x]+`" src="img/Piezas/`+tablero[y][x]+`.png">` )
             }
         }
     }
