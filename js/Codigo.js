@@ -3,7 +3,7 @@ $("Document").ready(function(){
     const D20Normal = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20]
     var Dadopara = true
     const turnos = ["Blanco", "Negro", "Dado"]
-    var deQuien = 0
+    var deQuien = 3
 
     var tablero = [
     ["TN","CN","AN","DN","RN","AN","CN","TN"],
@@ -24,9 +24,10 @@ $("Document").ready(function(){
 
     
     $(".espacio").on("click",function(){
-      var espacioSel = $(this).attr("id")
+       y = $(this).attr("id").slice(0,1)
+       x = $(this).attr("id").slice(-1)
       var piezaSel = $(this).html().slice(10,12)
-      console.log(piezaSel+" "+espacioSel)
+      console.log(piezaSel+" "+y+x)
     })
     
 
