@@ -252,8 +252,46 @@ $("Document").ready(function(){
         movTorre(y,x);
      }
      function movRey(y,x){
-
-
+        if($("#"+(y-i)+(x-(-i))).html()==` `){
+            $("#"+(y-i)+(x-(-i))).addClass("resalto")
+        }else{
+            $("#"+(y-i)+(x-(-i))).addClass("capturable")
+        }
+if($("#"+(y-i)+(x-i)).html()==` `){
+            $("#"+(y-i)+(x-i)).addClass("resalto")
+        }else{
+            $("#"+(y-i)+(x-i)).addClass("capturable")
+        }
+if($("#"+(y-(-i))+(x-i)).html()==` `){
+            $("#"+(y-(-i))+(x-i)).addClass("resalto")
+        }else{
+            $("#"+(y-(-i))+(x-i)).addClass("capturable")
+        }
+if($("#"+(y-(-i))+(x-(-i))).html()==` `){
+            $("#"+(y-(-i))+(x-(-i))).addClass("resalto")
+        }else{
+            $("#"+(y-(-i))+(x-(-i))).addClass("capturable")
+        }
+if($("#"+(y-i)+(x)).html()==` `){
+            $("#"+(y-i)+(x)).addClass("resalto")
+        }else{
+            $("#"+(y-i)+(x)).addClass("capturable")
+        }
+if($("#"+(y)+(x-i)).html()==` `){
+            $("#"+(y)+(x-i)).addClass("resalto")
+        }else{
+            $("#"+(y)+(x-i)).addClass("capturable")
+        }
+if($("#"+(y-(-i))+(x)).html()==` `){
+            $("#"+(y-(-i))+(x)).addClass("resalto")
+        }else{
+            $("#"+(y-(-i))+(x)).addClass("capturable")
+        }
+if($("#"+(y)+(x-(-i))).html()==` `){
+            $("#"+(y)+(x-(-i))).addClass("resalto")
+        }else{
+            $("#"+(y)+(x-(-i))).addClass("capturable")
+        }
      }
  
 
