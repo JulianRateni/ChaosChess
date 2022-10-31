@@ -87,7 +87,7 @@ $("Document").ready(function(){
             $(SeMueveOCapturaA).empty().html(pieza)
         }
         if(victoria){
-            alert("un jugador gano, todavia no se quien :^p")
+            alert("un jugador gano, todavia no se quien :^p");
         }
         $(".resalto").removeClass("resalto")
         $(".capturable").removeClass("capturable")
