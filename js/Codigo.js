@@ -75,13 +75,20 @@ $("Document").ready(function(){
 
      function moverOCapturar(OGPos,pieza,SeMueveOCapturaA){
         $(OGPos).empty().html(` `)
+        var victoria = false
         console.log(piezaID.slice(1,3).slice(-1))
+        var espacioACapturar = $(SeMueveOCapturaA).html().slice(10,13)
+        if(espacioACapturar.slice(0,1) == "R"){
+            victoria = true
+        }
         if(piezaID.slice(1,3).slice(-1) == "C"){
             $(SeMueveOCapturaA).empty().html(pieza.slice(0,12)+`" `+pieza.slice(14,33)+`.png">`)
         }else{
             $(SeMueveOCapturaA).empty().html(pieza)
         }
-        pieza.empty
+        if(victoria){
+            alert("un jugador gano, todavia no se quien :^p")
+        }
         $(".resalto").removeClass("resalto")
         $(".capturable").removeClass("capturable")
         tiempoFin(true);
@@ -168,7 +175,6 @@ $("Document").ready(function(){
         }
      }
      function movAlfil(y,x){
-        console.log("en movAlfil")
         for(var i=1;i<=8;i++){
             if($("#"+(y-i)+(x-(-i))).html()==` `){
                 $("#"+(y-i)+(x-(-i))).addClass("resalto")
@@ -203,8 +209,41 @@ $("Document").ready(function(){
         }
      }
      function movTorre(y,x){
+        for(var i=1;i<=8;i++){
+            if($("#"+(y-i)+(x)).html()==` `){
+                $("#"+(y-i)+(x)).addClass("resalto")
+            }else{
+                $("#"+(y-i)+(x)).addClass("capturable")
+                break;
+            }
+        }
 
+        for(var i=1;i<=8;i++){
+            if($("#"+(y)+(x-i)).html()==` `){
+                $("#"+(y)+(x-i)).addClass("resalto")
+            }else{
+                $("#"+(y)+(x-i)).addClass("capturable")
+                break;
+            }
+        }
 
+        for(var i=1;i<=8;i++){
+            if($("#"+(y-(-i))+(x)).html()==` `){
+                $("#"+(y-(-i))+(x)).addClass("resalto")
+            }else{
+                $("#"+(y-(-i))+(x)).addClass("capturable")
+                break;
+            }
+        }
+        
+        for(var i=1;i<=8;i++){
+            if($("#"+(y)+(x-(-i))).html()==` `){
+                $("#"+(y)+(x-(-i))).addClass("resalto")
+            }else{
+                $("#"+(y)+(x-(-i))).addClass("capturable")
+                break;
+            }
+        }
      }
      function movDama(y,x){
 
