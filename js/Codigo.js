@@ -252,45 +252,45 @@ $("Document").ready(function(){
         movTorre(y,x);
      }
      function movRey(y,x){
-        if($("#"+(y-i)+(x-(-i))).html()==` `){
-            $("#"+(y-i)+(x-(-i))).addClass("resalto")
+        if($("#"+(y-1)+(x-(-1))).html()==` `){
+            $("#"+(y-1)+(x-(-1))).addClass("resalto")
         }else{
-            $("#"+(y-i)+(x-(-i))).addClass("capturable")
+            $("#"+(y-1)+(x-(-1))).addClass("capturable")
         }
-if($("#"+(y-i)+(x-i)).html()==` `){
-            $("#"+(y-i)+(x-i)).addClass("resalto")
+        if($("#"+(y-1)+(x-1)).html()==` `){
+            $("#"+(y-1)+(x-1)).addClass("resalto")
         }else{
-            $("#"+(y-i)+(x-i)).addClass("capturable")
+            $("#"+(y-1)+(x-1)).addClass("capturable")
         }
-if($("#"+(y-(-i))+(x-i)).html()==` `){
-            $("#"+(y-(-i))+(x-i)).addClass("resalto")
+        if($("#"+(y-(-1))+(x-1)).html()==` `){
+            $("#"+(y-(-1))+(x-1)).addClass("resalto")
         }else{
-            $("#"+(y-(-i))+(x-i)).addClass("capturable")
+            $("#"+(y-(-1))+(x-1)).addClass("capturable")
         }
-if($("#"+(y-(-i))+(x-(-i))).html()==` `){
-            $("#"+(y-(-i))+(x-(-i))).addClass("resalto")
+        if($("#"+(y-(-1))+(x-(-1))).html()==` `){
+            $("#"+(y-(-1))+(x-(-1))).addClass("resalto")
         }else{
-            $("#"+(y-(-i))+(x-(-i))).addClass("capturable")
+            $("#"+(y-(-1))+(x-(-1))).addClass("capturable")
         }
-if($("#"+(y-i)+(x)).html()==` `){
-            $("#"+(y-i)+(x)).addClass("resalto")
+        if($("#"+(y-1)+(x)).html()==` `){
+            $("#"+(y-1)+(x)).addClass("resalto")
         }else{
-            $("#"+(y-i)+(x)).addClass("capturable")
+            $("#"+(y-1)+(x)).addClass("capturable")
         }
-if($("#"+(y)+(x-i)).html()==` `){
-            $("#"+(y)+(x-i)).addClass("resalto")
+        if($("#"+(y)+(x-1)).html()==` `){
+            $("#"+(y)+(x-1)).addClass("resalto")
         }else{
-            $("#"+(y)+(x-i)).addClass("capturable")
+            $("#"+(y)+(x-1)).addClass("capturable")
         }
-if($("#"+(y-(-i))+(x)).html()==` `){
-            $("#"+(y-(-i))+(x)).addClass("resalto")
+        if($("#"+(y-(-1))+(x)).html()==` `){
+            $("#"+(y-(-1))+(x)).addClass("resalto")
         }else{
-            $("#"+(y-(-i))+(x)).addClass("capturable")
+            $("#"+(y-(-1))+(x)).addClass("capturable")
         }
-if($("#"+(y)+(x-(-i))).html()==` `){
-            $("#"+(y)+(x-(-i))).addClass("resalto")
+        if($("#"+(y)+(x-(-1))).html()==` `){
+            $("#"+(y)+(x-(-1))).addClass("resalto")
         }else{
-            $("#"+(y)+(x-(-i))).addClass("capturable")
+            $("#"+(y)+(x-(-1))).addClass("capturable")
         }
      }
  
