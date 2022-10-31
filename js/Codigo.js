@@ -88,6 +88,8 @@ $("Document").ready(function(){
         }
         if(victoria){
             alert("un jugador gano, todavia no se quien :^p");
+            window.location.reload()
+            return;
         }
         $(".resalto").removeClass("resalto")
         $(".capturable").removeClass("capturable")
@@ -246,8 +248,8 @@ $("Document").ready(function(){
         }
      }
      function movDama(y,x){
-
-
+        movAlfil(y,x);
+        movTorre(y,x);
      }
      function movRey(y,x){
 
