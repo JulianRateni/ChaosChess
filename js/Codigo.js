@@ -74,7 +74,7 @@ $("Document").ready(function(){
      })
 
      function moverOCapturar(OGPos,pieza,SeMueveOCapturaA){
-        $(OGPos).empty().html()
+        $(OGPos).empty().html(` `)
         console.log(piezaID.slice(1,3).slice(-1))
         if(piezaID.slice(1,3).slice(-1) == "C"){
             $(SeMueveOCapturaA).empty().html(pieza.slice(0,12)+`" `+pieza.slice(14,33)+`.png">`)
@@ -123,8 +123,49 @@ $("Document").ready(function(){
         }
      }
      function movCaballo(y,x){
+        if($("#"+(y-2)+(x-1)).html()==` `){
+            $("#"+(y-2)+(x-1)).addClass("resalto")
+        }else{
+            $("#"+(y-2)+(x-1)).addClass("capturable")
+        }
+        if($("#"+(y-2)+(x-(-1))).html()==` `){
+            $("#"+(y-2)+(x-(-1))).addClass("resalto")
+        }else{
+            $("#"+(y-2)+(x-(-1))).addClass("capturable")
+        }
+        
+        if($("#"+(y-(-1))+(x-(-2))).html()==` `){
+            $("#"+(y-(-1))+(x-(-2))).addClass("resalto")
+        }else{
+            $("#"+(y-(-1))+(x-(-2))).addClass("capturable")
+        }
+        if($("#"+(y-1)+(x-(-2))).html()==` `){
+            $("#"+(y-1)+(x-(-2))).addClass("resalto")
+        }else{
+            $("#"+(y-1)+(x-(-2))).addClass("capturable")
+        }
 
+        if($("#"+(y-(-2))+(x-1)).html()==` `){
+            $("#"+(y-(-2))+(x-1)).addClass("resalto")
+        }else{
+            $("#"+(y-(-2))+(x-1)).addClass("capturable")
+        }
+        if($("#"+(y-(-2))+(x-(-1))).html()==` `){
+            $("#"+(y-(-2))+(x-(-1))).addClass("resalto")
+        }else{
+            $("#"+(y-(-2))+(x-(-1))).addClass("capturable")
+        }
 
+        if($("#"+(y-(-1))+(x-2)).html()==` `){
+            $("#"+(y-(-1))+(x-2)).addClass("resalto")
+        }else{
+            $("#"+(y-(-1))+(x-2)).addClass("capturable")
+        }
+        if($("#"+(y-1)+(x-2)).html()==` `){
+            $("#"+(y-1)+(x-2)).addClass("resalto")
+        }else{
+            $("#"+(y-1)+(x-2)).addClass("capturable")
+        }
      }
      function movAlfil(y,x){
 
