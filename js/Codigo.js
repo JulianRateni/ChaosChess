@@ -168,8 +168,39 @@ $("Document").ready(function(){
         }
      }
      function movAlfil(y,x){
-
-
+        console.log("en movAlfil")
+        for(var i=1;i<=8;i++){
+            if($("#"+(y-i)+(x-(-i))).html()==` `){
+                $("#"+(y-i)+(x-(-i))).addClass("resalto")
+            }else{
+                $("#"+(y-i)+(x-(-i))).addClass("capturable")
+                break;
+            }
+        }
+        for(var i=1;i<=8;i++){
+            if($("#"+(y-i)+(x-i)).html()==` `){
+                $("#"+(y-i)+(x-i)).addClass("resalto")
+            }else{
+                $("#"+(y-i)+(x-i)).addClass("capturable")
+                break;
+            }
+        }
+        for(var i=1;i<=8;i++){
+            if($("#"+(y-(-i))+(x-i)).html()==` `){
+                $("#"+(y-(-i))+(x-i)).addClass("resalto")
+            }else{
+                $("#"+(y-(-i))+(x-i)).addClass("capturable")
+                break;
+            }
+        }
+        for(var i=1;i<=8;i++){
+            if($("#"+(y-(-i))+(x-(-i))).html()==` `){
+                $("#"+(y-(-i))+(x-(-i))).addClass("resalto")
+            }else{
+                $("#"+(y-(-i))+(x-(-i))).addClass("capturable")
+                break;
+            }
+        }
      }
      function movTorre(y,x){
 
