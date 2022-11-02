@@ -27,6 +27,7 @@ $("Document").ready(function(){
   var piezaSel
   var piezaID
   var idIntervalo
+  var DobleRoll = false
 
     function renderTablero(){
          for(y = 0; y < 8; y++){
@@ -294,6 +295,8 @@ $("Document").ready(function(){
         }
      }
  
+
+
     function DadoEventos(n){
         switch(n){
             case 1: alert("Hambre"); break;
@@ -311,16 +314,37 @@ $("Document").ready(function(){
             case 13: alert("Guerra"); break;
             case 14: alert("El Libro Rojo"); break;
             case 15: alert("Linea"); break;
-            case 16: alert("Doble Roll"); break;
+            case 16: alert("Doble Roll"); Evento16(); break;
             case 17: alert("Columna"); break;
             case 18: alert("Intercambio"); break;
             case 19: alert("Resurreccion"); break;
             case 20: alert("Prosperidad"); break;
         }
-        if(!DobleRoll){
+        if(DobleRoll == false){
+            console.log("DobleRoll esta apagado")
             CambioDado();
+            return;
         }
+        console.log("DobleRoll esta encendido")
     }
+
+    function Evento16(){
+        DobleRoll = true
+        console.log("DobleRoll es true")
+         for(var i=1; i<=2; i++){
+            var Evento = D20Normal[Math.floor(Math.random()*78)]
+            $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
+            if(Dadopara){
+                $("#divCard").attr("class","container blanco")
+            }else{
+                $("#divCard").attr("class","container negro")
+            }
+            DadoEventos(Evento)
+        }
+        DobleRoll = false
+        console.log("DobleRoll es false")
+        return;
+     }
  
     function CambioDado(){
         Dadopara = !Dadopara
@@ -328,7 +352,7 @@ $("Document").ready(function(){
     }
 
     function TurnoDado(){
-        var Evento = D20Normal[Math.floor(Math.random()*78)]
+            var Evento = D20Normal[Math.floor(Math.random()*78)]
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
         if(Dadopara){
             $("#divCard").attr("class","container blanco")
@@ -386,9 +410,9 @@ $("Document").ready(function(){
         }
         console.log(deQuien);
         switch(turnos[deQuien]){
-            case "Blanco": TurnoJugador("Blanco"); break
-            case "Negro": TurnoJugador("Negro"); break
-            case "Dado": TurnoDado(); break
+            case "Blanco": TurnoJugador("Blanco"); break;
+            case "Negro": TurnoJugador("Negro"); break;
+            case "Dado": TurnoDado(); break;
         }
     }
 
