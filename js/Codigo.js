@@ -294,7 +294,33 @@ $("Document").ready(function(){
         }
      }
  
-
+    function DadoEventos(n){
+        switch(n){
+            case 1: alert("Hambre"); break;
+            case 2: alert("Peones Recargados"); break;
+            case 3: alert("Francotirador"); break;
+            case 4: alert("Muerte"); break;
+            case 5: alert("Conquista"); break;
+            case 6: alert("Magia Negra"); break;
+            case 7: alert("Sacrificio Para Los Dioses"); break;
+            case 8: alert("Erupcion Volcanica"); break;
+            case 9: alert("Zombies"); break;
+            case 10: alert("Amnesia"); break;
+            case 11: alert("Defensor de la Reina"); break;
+            case 12: alert("Muerte a la Reina"); break;
+            case 13: alert("Guerra"); break;
+            case 14: alert("El Libro Rojo"); break;
+            case 15: alert("Linea"); break;
+            case 16: alert("Doble Roll"); break;
+            case 17: alert("Columna"); break;
+            case 18: alert("Intercambio"); break;
+            case 19: alert("Resurreccion"); break;
+            case 20: alert("Prosperidad"); break;
+        }
+        if(!DobleRoll){
+            CambioDado();
+        }
+    }
  
     function CambioDado(){
         Dadopara = !Dadopara
@@ -309,9 +335,9 @@ $("Document").ready(function(){
         }else{
             $("#divCard").attr("class","container negro")
         }
-        setTimeout(function(){alert("hace de cuenta que hace el evento seleccionado");},200)
 
-        CambioDado();
+        setTimeout(function(){DadoEventos(Evento);},200) 
+        
     }
 
     $("#BtnDado").on("click",function(){
