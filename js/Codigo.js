@@ -457,8 +457,7 @@ $("Document").ready(function(){
         }
 
         setTimeout(function(){DadoEventos(Evento);},200) 
-        
-    }
+     }
 
     $("#BtnDado").on("click",function(){
         $(this).prop("disabled", true)
