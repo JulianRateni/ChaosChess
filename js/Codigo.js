@@ -1,10 +1,21 @@
 
-
 $("Document").ready(function(){
     const D20Normal = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20]
     var Dadopara = true
     const turnos = ["Blanco", "Negro", "Dado"]
     var deQuien = 3
+
+    let CondsBlanco = {
+        Amnesia: false,
+        Defensor: false,
+
+    }
+
+    let CondsNegro = {
+        Amnesia: false,
+        Defensor: false,
+
+    }
 
     var tablero = [
     ["TN","CN","AN","DN","RN","AN","CN","TN"],
@@ -62,6 +73,14 @@ $("Document").ready(function(){
        console.log(piezaID+" "+y+x)
        if(piezaID.slice(0,2)!="nd"){
          if(piezaID.slice(1,2) == turnos[deQuien].slice(0,1)){
+            if(CondsBlanco.Amnesia && (turnos[deQuien].slice(0,1) == "B")){
+                movPeon(piezaID.slice(1,3),y,x)
+                return;
+            }
+            if(CondsNegro.Amnesia && (turnos[deQuien].slice(0,1) == "N")){
+                movPeon(piezaID.slice(1,3),y,x)
+                return;
+            }
              switch(piezaID.slice(0,1)){
                  case "P": movPeon(piezaID.slice(1,3),y,x); break;
                  case "C": movCaballo(y,x); break;
@@ -100,6 +119,11 @@ $("Document").ready(function(){
      function movPeon(tipo,y,x){
         console.log("#"+(y-(-1))+x)
         if(tipo.slice(0,1) == "B"){
+            if(CondsBlanco.Defensor){
+                movDama(y,x);
+                $(".capturable").removeClass("capturable")
+                return;
+            }
             if($("#"+(y-1)+x).html()==` `){
                 $("#"+(y-1)+x).addClass("resalto")
             }
@@ -116,6 +140,11 @@ $("Document").ready(function(){
             }
         }
         if(tipo.slice(0,1) == "N"){
+            if(CondsNegro.Defensor){
+                movDama(y,x);
+                $(".capturable").removeClass("capturable")
+                return;
+            }
             if($("#"+(y-(-1))+x).html()==` `){
                 $("#"+(y-(-1))+x).addClass("resalto")
             }
@@ -308,8 +337,8 @@ $("Document").ready(function(){
             case 7: alert("Sacrificio Para Los Dioses"); break;
             case 8: alert("Erupcion Volcanica"); break;
             case 9: alert("Zombies"); break;
-            case 10: alert("Amnesia"); break;
-            case 11: alert("Defensor de la Reina"); break;
+            case 10: alert("Amnesia"); Evento10(); break;
+            case 11: alert("Defensor de la Reina"); Evento11(); break;
             case 12: alert("Muerte a la Reina"); break;
             case 13: alert("Guerra"); break;
             case 14: alert("El Libro Rojo"); break;
@@ -326,6 +355,22 @@ $("Document").ready(function(){
             return;
         }
         console.log("DobleRoll esta encendido")
+    }
+
+    function Evento10(){
+        if(Dadopara){
+            CondsBlanco.Amnesia = true
+        }else{
+            CondsNegro.Amnesia = true
+        }
+    }
+
+    function Evento11(){
+        if(Dadopara){
+            CondsBlanco.Defensor = true
+        }else{
+            CondsNegro.Defensor = true
+        }
     }
 
     function Evento16(){
@@ -352,7 +397,7 @@ $("Document").ready(function(){
     }
 
     function TurnoDado(){
-            var Evento = D20Normal[Math.floor(Math.random()*78)]
+            var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 11
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
         if(Dadopara){
             $("#divCard").attr("class","container blanco")
@@ -375,6 +420,14 @@ $("Document").ready(function(){
         }
         tiempo = 30.0
         $("#Reloj").val(tiempo)
+        if(deQuien == 0){
+            CondsBlanco.Amnesia = false
+            CondsBlanco.Defensor = false
+        }
+        if(deQuien == 1){
+            CondsNegro.Amnesia = false
+            CondsNegro.Defensor = false
+        }
         deQuien++
         ComienzoTurno();
     }
