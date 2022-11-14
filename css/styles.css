@@ -1,7 +1,10 @@
-body{
+body {
+    background: url("https://static.vecteezy.com/system/resources/previews/003/498/729/non_2x/wood-texture-wood-planks-background-and-old-wood-free-photo.JPG") no-repeat center center fixed;
+    background-size: cover; 
     margin: 0;
     padding: 0;
 }
+
 .RowGrande{
     width: 100%;
     margin-left: 1%;
@@ -119,14 +122,14 @@ img{
     .Col1{
         background-color: rgb(135, 67, 29);
         width: fit-content;
-        height: 650px;
+        height: 580px;
 
         float: left;
 
         margin-top: 5%;
         margin-bottom: 5%;
     
-        box-shadow: 5px 5px  rgb(41, 41, 41);
+        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
         border-radius: 1.5%;
         border: 5px solid rgb(41, 0, 1);
     }
@@ -140,7 +143,8 @@ img{
         padding-top: 0%;
         padding: 10px;
         margin-top: 5%;
-        box-shadow: 5px 5px 3px 2px rgb(41, 41, 41);
+        margin-left: 20px;
+        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
         border: 5px solid rgb(41, 0, 1);
         border-radius: 1.5%;
     }
@@ -155,7 +159,7 @@ img{
         float: left;
         margin-left: 10px;
         margin-top: 6%;
-        box-shadow: 5px 5px 3px 2px rgb(41, 41, 41);
+        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
         border: 5px solid rgb(41, 0, 1);
         border-radius: 1.5%;
     }
@@ -184,7 +188,7 @@ img{
 /*Reloj*/
    
     #time{
-        width: 180px;
+        width: 160px;
         float: left;
         margin-top: 20%;
         margin-left: 1%;
@@ -200,23 +204,30 @@ img{
         margin-left: 3.5px;
         margin-bottom: 10px;
         text-align: center;
-        font-size: 70px;
+        font-size: 76px;
         padding-left: 15px;
-        border-radius: 45%;
-        color: rgb(41, 0, 1);
+        border-radius: 90px;
+        color: rgb(8, 8, 8);
         background-color: rgb(200, 121, 65);
+        background: url("https://media.istockphoto.com/photos/brushed-dark-metal-texture-picture-id1155962535?k=20&m=1155962535&s=170667a&w=0&h=VkfeYWPTl1-koxSY8Foxr-I2R_YNbD9MUOiyDiVB_KE=") no-repeat center center fixed;
         box-shadow: 5px 5px  rgb(41, 41, 41);
         border: solid 3px rgb(41, 0, 1);
+        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
+    }
+
+    background-image{
+        width: 60px ;
     }
 
     #TurnoDe{
         width: 171px;
-        background: none;
+        padding-bottom: 5px;
         color: rgb(135, 67, 29);
         text-align: center;
-        box-shadow: 5px 5px 2px 2px rgb(41, 41, 41);
+        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
         font-size: 15px;
         font-weight: bold;
+        background-color: #290001;
     }
 
 /*Fin de Reloj*/
