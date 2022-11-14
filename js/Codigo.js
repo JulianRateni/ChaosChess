@@ -8,13 +8,13 @@ $("Document").ready(function(){
     let CondsBlanco = {
         Amnesia: false,
         Defensor: false,
-
+        SacrificioDioses: false,
     }
 
     let CondsNegro = {
         Amnesia: false,
         Defensor: false,
-
+        SacrificioDioses: false,
     }
 
     var tablero = [
@@ -39,6 +39,8 @@ $("Document").ready(function(){
   var piezaID
   var idIntervalo
   var DobleRoll = false
+  var Intercambio = false
+  let rep = false
 
     function renderTablero(){
          for(y = 0; y < 8; y++){
@@ -59,12 +61,35 @@ $("Document").ready(function(){
     $(".espacio").on("click",function(){
         y = $(this).attr("id").slice(0,1)
         x = $(this).attr("id").slice(-1)
-        if($(this).hasClass("resalto") || $(this).hasClass("capturable")){
+        if(Intercambio){
+            if(!rep){
+                if($(this).html()==` `){
+                    alert("seleccione un espacio con pieza")
+                    return;
+                }
+                $(this).addClass("resalto")
+                htmlPieza1 = "#"+$(this).attr("id")
+                piezaSel = $(htmlPieza1).html()
+                rep = true
+            }else{
+                if($(this).html()==` `){
+                    alert("seleccione un espacio con pieza")
+                    return;
+                }
+                $(".resalto").removeClass("resalto")
+                htmlPieza2 = "#"+$(this).attr("id")
+                $(htmlPieza1).html($(htmlPieza2).html())
+                $(htmlPieza2).html(piezaSel)
+                rep = false
+                Intercambio = false
+            }
+        }else{       
+            if($(this).hasClass("resalto") || $(this).hasClass("capturable")){
             htmlPieza2 = "#"+$(this).attr("id")
             console.log(htmlPieza2)
             moverOCapturar(htmlPieza1,piezaSel,htmlPieza2);
             return;
-        }
+            }
         $(".resalto").removeClass("resalto")
         $(".capturable").removeClass("capturable")
         htmlPieza1 = "#"+$(this).attr("id")
@@ -76,11 +101,11 @@ $("Document").ready(function(){
             if(CondsBlanco.Amnesia && (turnos[deQuien].slice(0,1) == "B")){
                 movPeon(piezaID.slice(1,3),y,x)
                 return;
-            }
+                }
             if(CondsNegro.Amnesia && (turnos[deQuien].slice(0,1) == "N")){
                 movPeon(piezaID.slice(1,3),y,x)
                 return;
-            }
+                }
              switch(piezaID.slice(0,1)){
                  case "P": movPeon(piezaID.slice(1,3),y,x); break;
                  case "C": movCaballo(y,x); break;
@@ -89,8 +114,9 @@ $("Document").ready(function(){
                  case "D": movDama(y,x); break;
                  case "R": movRey(y,x); break;
                  }
+             }
          }
-       }
+        }
      })
 
      function moverOCapturar(OGPos,pieza,SeMueveOCapturaA){
@@ -345,11 +371,11 @@ $("Document").ready(function(){
             case 15: alert("Linea"); break;
             case 16: alert("Doble Roll"); Evento16(); break;
             case 17: alert("Columna"); break;
-            case 18: alert("Intercambio"); break;
+            case 18: alert("Intercambio"); Evento18(); break;
             case 19: alert("Resurreccion"); break;
             case 20: alert("Prosperidad"); Evento20(); break;
         }
-        if(DobleRoll == false){
+        if(DobleRoll == false && Intercambio == false){
             console.log("DobleRoll esta apagado")
             CambioDado();
             return;
@@ -391,6 +417,18 @@ $("Document").ready(function(){
         return;
      }
  
+    function Evento18(){
+        Intercambio = true
+        idIntervalo = setInterval(function(){
+            if(!Intercambio){
+                clearInterval(idIntervalo)
+                CambioDado();
+            }else{
+                console.log("dentro de intercambio")
+            }
+        },100)
+    }
+    
     function Evento20(){
         if(Dadopara){
             alert("Blanco gano por el efecto de Prosperidad");
@@ -409,6 +447,7 @@ $("Document").ready(function(){
     }
 
     function TurnoDado(){
+        $("#TurnoDe").val("Turno de: Dado");
             var Evento = D20Normal[Math.floor(Math.random()*78)]
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
         if(Dadopara){
@@ -418,8 +457,7 @@ $("Document").ready(function(){
         }
 
         setTimeout(function(){DadoEventos(Evento);},200) 
-        
-    }
+     }
 
     $("#BtnDado").on("click",function(){
         $(this).prop("disabled", true)
