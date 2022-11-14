@@ -347,7 +347,7 @@ $("Document").ready(function(){
             case 17: alert("Columna"); break;
             case 18: alert("Intercambio"); break;
             case 19: alert("Resurreccion"); break;
-            case 20: alert("Prosperidad"); break;
+            case 20: alert("Prosperidad"); Evento20(); break;
         }
         if(DobleRoll == false){
             console.log("DobleRoll esta apagado")
@@ -391,13 +391,25 @@ $("Document").ready(function(){
         return;
      }
  
+    function Evento20(){
+        if(Dadopara){
+            alert("Blanco gano por el efecto de Prosperidad");
+            window.location.reload()
+            return;
+        }else{
+            alert("Negro gano por el efecto de Prosperidad");
+            window.location.reload()
+            return;
+        }
+    }
+
     function CambioDado(){
         Dadopara = !Dadopara
         FinTurno();
     }
 
     function TurnoDado(){
-            var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 11
+            var Evento = D20Normal[Math.floor(Math.random()*78)]
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
         if(Dadopara){
             $("#divCard").attr("class","container blanco")
