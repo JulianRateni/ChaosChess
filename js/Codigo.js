@@ -1,5 +1,4 @@
 
-
 $("Document").ready(function(){
     const D20Normal = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20]
     var Dadopara = true
@@ -20,12 +19,12 @@ $("Document").ready(function(){
 
     var tablero = [
     ["TN","CN","AN","DN","RN","AN","CN","TN"],
-    ["PNC","PNC","PNC","PNC","PNC","PNC","PNC","PNC"],
+    ["PND","PNC","PNC","PNC","PNC","PNC","PNC","PNC"],
     ["nd","nd","nd","nd","nd","nd","nd","nd"],
     ["nd","nd","nd","nd","nd","nd","nd","nd"],
     ["nd","nd","nd","nd","nd","nd","nd","nd"],
     ["nd","nd","nd","nd","nd","nd","nd","nd"],
-    ["PBC","PBC","PBC","PBC","PBC","PBC","PBC","PBC"],
+    ["PBD","PBC","PBC","PBC","PBC","PBC","PBC","PBC"],
     ["TB","CB","AB","DB","RB","AB","CB","TB"]
     ]
   /*                      y  x
@@ -362,7 +361,7 @@ $("Document").ready(function(){
             case 5: alert("Conquista"); break;
             case 6: alert("Magia Negra"); break;
             case 7: alert("Sacrificio Para Los Dioses"); break;
-            case 8: alert("Erupcion Volcanica"); break;
+            case 8: alert("Erupcion Volcanica"); Evento8(); break;
             case 9: alert("Zombies"); break;
             case 10: alert("Amnesia"); Evento10(); break;
             case 11: alert("Defensor de la Reina"); Evento11(); break;
@@ -407,6 +406,28 @@ $("Document").ready(function(){
         }
     }
 
+    function Evento8(){
+        y = Math.floor(Math.random()*8)
+        x = Math.floor(Math.random()*8)
+        alert("Un volcan aparecio en Y = "+y+" y X = "+x)
+        $("#"+y+x).addClass("magma")
+        $("#"+(y-1)+(x-(-1))).addClass("magma")
+        $("#"+(y-1)+(x-1)).addClass("magma")
+        $("#"+(y-(-1))+(x-1)).addClass("magma")
+        $("#"+(y-(-1))+(x-(-1))).addClass("magma")
+        $("#"+(y-1)+(x)).addClass("magma")
+        $("#"+(y)+(x-1)).addClass("magma")
+        $("#"+(y-(-1))+(x)).addClass("magma")
+        $("#"+(y)+(x-(-1))).addClass("magma")
+        $(".magma > img").each(function(){
+            var piezaKill = $(this).attr("id")
+            if(piezaKill.slice(-1) == "C"){
+                piezaKill = piezaKill.slice(0,3)
+            }
+            console.log(piezaKill)
+        })
+    }
+
     function Evento10(){
         if(Dadopara){
             CondsBlanco.Amnesia = true
@@ -429,6 +450,13 @@ $("Document").ready(function(){
         for(y=0;y<8;y++){
             $("#"+Kill+y).addClass("magma")
         }
+        $(".magma > img").each(function(){
+            var piezaKill = $(this).attr("id")
+            if(piezaKill.slice(-1) == "C"){
+                piezaKill = piezaKill.slice(0,3)
+            }
+            console.log(piezaKill)
+        })
     }
 
     function Evento16(){
@@ -455,6 +483,13 @@ $("Document").ready(function(){
         for(x=0;x<8;x++){
             $("#"+x+Kill).addClass("magma")
         }
+        $(".magma > img").each(function(){
+            var piezaKill = $(this).attr("id")
+            if(piezaKill.slice(-1) == "C"){
+                piezaKill = piezaKill.slice(0,3)
+            }
+            console.log(piezaKill)
+        })
     }
 
     function Evento18(){
@@ -490,7 +525,7 @@ $("Document").ready(function(){
 
     function TurnoDado(){
         $("#TurnoDe").val("Turno de: Dado");
-            var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 2
+            var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 8
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
         if(Dadopara){
             $("#divCard").attr("class","container blanco")
