@@ -1,3 +1,4 @@
+const { $ } = require("dom7");
 
 $("Document").ready(function(){
     const D20Normal = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20]
@@ -38,8 +39,8 @@ $("Document").ready(function(){
   var piezaSel
   var piezaID
   var idIntervalo
-  var DobleRoll = false
-  var Intercambio = false
+  let DobleRoll = false
+  let Intercambio = false
   let rep = false
 
     function renderTablero(){
@@ -355,7 +356,7 @@ $("Document").ready(function(){
     function DadoEventos(n){
         switch(n){
             case 1: alert("Hambre"); break;
-            case 2: alert("Peones Recargados"); break;
+            case 2: alert("Peones Recargados"); Evento2(); break;
             case 3: alert("Francotirador"); break;
             case 4: alert("Muerte"); break;
             case 5: alert("Conquista"); break;
@@ -370,17 +371,32 @@ $("Document").ready(function(){
             case 14: alert("El Libro Rojo"); break;
             case 15: alert("Linea"); Evento15(); break;
             case 16: alert("Doble Roll"); Evento16(); break;
-            case 17: alert("Columna"); break;
+            case 17: alert("Columna"); Evento17(); break;
             case 18: alert("Intercambio"); Evento18(); break;
             case 19: alert("Resurreccion"); break;
             case 20: alert("Prosperidad"); Evento20(); break;
         }
+        setTimeout(function(){
         if(DobleRoll == false && Intercambio == false){
-            console.log("DobleRoll esta apagado")
             CambioDado();
             return;
+        }},500)
+    }
+
+    function Evento2(){
+        if(Dadopara){
+            for(y=0;y<8;y++){
+                for(x=0;x<8;x++){
+                    piezaID = $("#"+y+x).html().slice(10,13)
+                    if(piezaID == `PB"`){
+                        var piezaOG = $("#"+y+x).html()
+                        $("#"+y+x).empty().html(``+piezaOG.slice(0,12)+`C`+piezaOG.slice(13,))
+                    }
+                }
+            }
+        }else{
+
         }
-        console.log("DobleRoll esta encendido")
     }
 
     function Evento10(){
@@ -400,10 +416,10 @@ $("Document").ready(function(){
     }
 
     function Evento15(){
-        var LineaKill = Math.floor(Math.random()*8)
-        alert("todas las piezas en X = "+LineaKill+" estan muertas!!")
+        var Kill = Math.floor(Math.random()*8)
+        alert("todas las piezas en X = "+Kill+" estan muertas!!")
         for(y=0;y<8;y++){
-            $("#"+LineaKill+y).addClass("capturable")
+            $("#"+Kill+y).addClass("capturable")
         }
     }
 
@@ -425,6 +441,14 @@ $("Document").ready(function(){
         return;
      }
  
+    function Evento17(){
+        var Kill = Math.floor(Math.random()*8)
+        alert("todas las piezas en Y = "+Kill+" estan muertas!!")
+        for(x=0;x<8;x++){
+            $("#"+x+Kill).addClass("capturable")
+        }
+    }
+
     function Evento18(){
         Intercambio = true
         idIntervalo = setInterval(function(){
@@ -451,7 +475,9 @@ $("Document").ready(function(){
 
     function CambioDado(){
         Dadopara = !Dadopara
-        FinTurno();
+        if(DobleRoll == false && Intercambio == false){
+            FinTurno();
+        }
     }
 
     function TurnoDado(){
@@ -501,6 +527,8 @@ $("Document").ready(function(){
 
     function TurnoJugador(Color){
         $("#TurnoDe").val("Turno de: "+Color);
+        $(".resalto").removeClass("resalto")
+        $(".capturable").removeClass("capturable")
         setTimeout(function(){
              idIntervalo = setInterval(function(){
                 if(tiempo <= 0){
@@ -516,8 +544,6 @@ $("Document").ready(function(){
 
 
     function ComienzoTurno(){
-        $(".resalto").removeClass("resalto")
-        $(".capturable").removeClass("capturable")
         if(deQuien == 3){
             deQuien = 0
         }
