@@ -253,8 +253,11 @@ img{
     background-color: darkslategray;
  }
  .resalto{
-    background-color: greenyellow;
+    background-color: rgba(54, 255, 47, 0.75);
  }
  .capturable{
-    background-color: crimson;
+    background-color: rgba(220, 20, 60, 0.75);
  }
+
+
+ 
