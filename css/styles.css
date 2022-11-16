@@ -259,8 +259,11 @@ img{
     background-color: rgba(220, 20, 60, 0.75);
  }
  .magma{
-    background-image: url(https://lh3.googleusercontent.com/7PiBOVmQiRwgamMaeVgDSedK0YCaSuCao5X8KelYqFum87u9qeGeRUVUVg2pqI5ihd3C-dIcCZC4yLO_iALYpKuYZFXW4uguLA=s400);
- }
+    background-image: url(../img/Eventos/Magma.png);
+    background-size: cover;
+    margin: 0%;
+    padding: 0%;
+}
 
 
  
