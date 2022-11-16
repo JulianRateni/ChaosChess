@@ -525,11 +525,7 @@ $("Document").ready(function(){
 
     function TurnoDado(){
         $("#TurnoDe").val("Turno de: Dado");
-<<<<<<< HEAD
             var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 8
-=======
-            var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 15
->>>>>>> 78445688cb6762cd08c6070b7c08aa3367d7259a
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
         if(Dadopara){
             $("#divCard").attr("class","container blanco")
