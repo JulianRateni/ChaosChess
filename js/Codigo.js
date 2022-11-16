@@ -537,6 +537,7 @@ $("Document").ready(function(){
         $("#TurnoDe").val("Turno de: "+Color);
         $(".resalto").removeClass("resalto")
         $(".capturable").removeClass("capturable")
+        $(".magma").removeClass("magma")
         setTimeout(function(){
              idIntervalo = setInterval(function(){
                 if(tiempo <= 0){
