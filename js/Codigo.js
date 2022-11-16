@@ -1,4 +1,4 @@
-const { $ } = require("dom7");
+
 
 $("Document").ready(function(){
     const D20Normal = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20, 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20]
@@ -390,12 +390,20 @@ $("Document").ready(function(){
                     piezaID = $("#"+y+x).html().slice(10,13)
                     if(piezaID == `PB"`){
                         var piezaOG = $("#"+y+x).html()
-                        $("#"+y+x).empty().html(``+piezaOG.slice(0,12)+`C`+piezaOG.slice(13,))
+                        $("#"+y+x).empty().html(``+piezaOG.slice(0,12)+`C`+piezaOG.slice(12,32)+`C`+piezaOG.slice(32,39))
                     }
                 }
             }
         }else{
-
+            for(y=0;y<8;y++){
+                for(x=0;x<8;x++){
+                    piezaID = $("#"+y+x).html().slice(10,13)
+                    if(piezaID == `PN"`){
+                        var piezaOG = $("#"+y+x).html()
+                        $("#"+y+x).empty().html(``+piezaOG.slice(0,12)+`C`+piezaOG.slice(12,32)+`C`+piezaOG.slice(32,39))
+                    }
+                }
+            }
         }
     }
 
@@ -482,7 +490,7 @@ $("Document").ready(function(){
 
     function TurnoDado(){
         $("#TurnoDe").val("Turno de: Dado");
-            var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 15
+            var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 2
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
         if(Dadopara){
             $("#divCard").attr("class","container blanco")
