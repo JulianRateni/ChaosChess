@@ -19,12 +19,12 @@ $("Document").ready(function(){
 
     var tablero = [
     ["TN","CN","AN","DN","RN","AN","CN","TN"],
-    ["PND","PNC","PNC","PNC","PNC","PNC","PNC","PNC"],
+    ["PNC","PNC","PNC","PNC","PNC","PNC","PNC","PNC"],
     ["nd","nd","nd","nd","nd","nd","nd","nd"],
     ["nd","nd","nd","nd","nd","nd","nd","nd"],
     ["nd","nd","nd","nd","nd","nd","nd","nd"],
     ["nd","nd","nd","nd","nd","nd","nd","nd"],
-    ["PBD","PBC","PBC","PBC","PBC","PBC","PBC","PBC"],
+    ["PBC","PBC","PBC","PBC","PBC","PBC","PBC","PBC"],
     ["TB","CB","AB","DB","RB","AB","CB","TB"]
     ]
   /*                      y  x
