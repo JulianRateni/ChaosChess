@@ -368,7 +368,7 @@ $("Document").ready(function(){
             case 12: alert("Muerte a la Reina"); break;
             case 13: alert("Guerra"); break;
             case 14: alert("El Libro Rojo"); break;
-            case 15: alert("Linea"); break;
+            case 15: alert("Linea"); Evento15(); break;
             case 16: alert("Doble Roll"); Evento16(); break;
             case 17: alert("Columna"); break;
             case 18: alert("Intercambio"); Evento18(); break;
@@ -396,6 +396,14 @@ $("Document").ready(function(){
             CondsBlanco.Defensor = true
         }else{
             CondsNegro.Defensor = true
+        }
+    }
+
+    function Evento15(){
+        var LineaKill = Math.floor(Math.random()*8)
+        alert("todas las piezas en X = "+LineaKill+" estan muertas!!")
+        for(y=0;y<8;y++){
+            $("#"+LineaKill+y).addClass("capturable")
         }
     }
 
@@ -448,7 +456,7 @@ $("Document").ready(function(){
 
     function TurnoDado(){
         $("#TurnoDe").val("Turno de: Dado");
-            var Evento = D20Normal[Math.floor(Math.random()*78)]
+            var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 15
         $("#Eventoimg").attr("src","img/Eventos/"+Evento+".png")
         if(Dadopara){
             $("#divCard").attr("class","container blanco")
@@ -508,6 +516,8 @@ $("Document").ready(function(){
 
 
     function ComienzoTurno(){
+        $(".resalto").removeClass("resalto")
+        $(".capturable").removeClass("capturable")
         if(deQuien == 3){
             deQuien = 0
         }
