@@ -427,7 +427,7 @@ $("Document").ready(function(){
         var Kill = Math.floor(Math.random()*8)
         alert("todas las piezas en X = "+Kill+" estan muertas!!")
         for(y=0;y<8;y++){
-            $("#"+Kill+y).addClass("capturable")
+            $("#"+Kill+y).addClass("magma")
         }
     }
 
@@ -453,7 +453,7 @@ $("Document").ready(function(){
         var Kill = Math.floor(Math.random()*8)
         alert("todas las piezas en Y = "+Kill+" estan muertas!!")
         for(x=0;x<8;x++){
-            $("#"+x+Kill).addClass("capturable")
+            $("#"+x+Kill).addClass("magma")
         }
     }
 
