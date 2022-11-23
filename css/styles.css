@@ -1,49 +1,50 @@
 body {
     background: url("https://static.vecteezy.com/system/resources/previews/003/498/729/non_2x/wood-texture-wood-planks-background-and-old-wood-free-photo.JPG") no-repeat center center fixed;
-    background-size: cover; 
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
 
-.RowGrande{
+.RowGrande {
     width: 100%;
     margin-left: 1%;
 }
-.container{
+
+.container {
     background-color: rgb(112, 52, 2);
     border-radius: 15px;
     width: 316px;
     height: 461px;
     margin: 15px;
-    
+
 }
 
 
 /* Card */
 
-.blanco{
+.blanco {
     border: 20px solid whitesmoke;
     margin-top: 15%;
 }
 
-.negro{
+.negro {
     border: 20px solid black;
     margin-top: 15%;
 }
 
-.gris{
+.gris {
     margin-top: 15%;
     border: 20px solid rgb(253, 224, 127);
 }
 
-img{
+img {
     width: 70px;
     height: 70px;
     margin: 0%;
     padding: 0%;
 }
 
-#Eventoimg{
+#Eventoimg {
     width: 316px;
     height: 461px;
 }
@@ -59,211 +60,229 @@ img{
 
 /*Temporal*/
 
-    #BtnDado{
-        width: 180px;
-        margin-top: 9%;
-        
-    }
+#BtnDado {
+    width: 180px;
+    margin-top: 9%;
 
-    #Event{
-        float: left;
-        margin-left: 5%;
-        color: rgb(41, 0, 1);
-    }
+}
 
-    .btn {
-        box-sizing: border-box;
-        -webkit-appearance: none;
-           -moz-appearance: none;
-                appearance: none;
-        background-color: transparent;
-        border: 2px solid #e74c3c;
-        border-radius: 0.6em;
-        color: #e74c3c;
-        cursor: pointer;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-align-self: center;
-            -ms-flex-item-align: center;
-                align-self: center;
-        padding: 1.2em 2.8em;
-        text-decoration: none;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-      }
-      .btn:hover, .btn:focus {
-        color: #290001;
-        outline: 0;
-      }
-      
+#Event {
+    float: left;
+    margin-left: 5%;
+    color: rgb(41, 0, 1);
+}
 
-    .third {
-        border-color: #290001;
-        color: #290001;
-        box-shadow: 0 0 40px 40px #87431D inset, 0 0 0 0 #87431D;
-        -webkit-transition: all 15ms ease-in-out;
-        transition: all 300ms ease-in-out;
-        background-color: rgb(200, 121, 65);
-      }
-      .third:hover {
-        box-shadow: 0 0 10px 0 #C87941 inset, 0 0 10px 4px #C87941;
-      }
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
 
-    .Picante{
-        color: red;
-    }  
+.btn:hover,
+.btn:focus {
+    color: #290001;
+    outline: 0;
+}
+
+
+.third {
+    border-color: #290001;
+    color: #290001;
+    box-shadow: 0 0 40px 40px #87431D inset, 0 0 0 0 #87431D;
+    -webkit-transition: all 15ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    background-color: rgb(200, 121, 65);
+}
+
+.third:hover {
+    box-shadow: 0 0 10px 0 #C87941 inset, 0 0 10px 4px #C87941;
+}
+
+.Picante {
+    color: red;
+}
 
 /*Columnas*/
 
-    .Col1{
-        background-color: rgb(135, 67, 29);
-        width: fit-content;
-        height: 580px;
+.Col1 {
+    background-color: rgb(135, 67, 29);
+    width: fit-content;
+    height: 580px;
 
-        float: left;
+    float: left;
 
-        margin-top: 5%;
-        margin-bottom: 5%;
-    
-        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
-        border-radius: 1.5%;
-        border: 5px solid rgb(41, 0, 1);
-    }
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
+    border-radius: 1.5%;
+    border: 5px solid rgb(41, 0, 1);
+}
 
 
-    .Col2{
-        float: left;
-        background-color: rgb(135, 67, 29);
-        width: 560px;
-        height: 560px;
-        padding-top: 0%;
-        padding: 10px;
-        margin-top: 5%;
-        margin-left: 20px;
-        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
-        border: 5px solid rgb(41, 0, 1);
-        border-radius: 1.5%;
-    }
-    .tablero{
-        margin-top: 25px;
-        margin-left: 25px;
-    }
+.Col2 {
+    float: left;
+    background-color: rgb(135, 67, 29);
+    width: 560px;
+    height: 560px;
+    padding-top: 0%;
+    padding: 10px;
+    margin-top: 5%;
+    margin-left: 20px;
+    box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
+    border: 5px solid rgb(41, 0, 1);
+    border-radius: 1.5%;
+}
 
-    #MuertasDiv{
-        width: 70px;
-        height: 550px;
-        float: left;
-        margin-left: 10px;
-        margin-top: 6%;
-        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
-        border: 5px solid rgb(41, 0, 1);
-        border-radius: 1.5%;
-    }
-        #MuertasN{
-            width: 60px;
-            height: 270px;
-            margin: 0%;
-            margin-top: 3px;
-            margin-left: 5px;
-            padding: 0%;
-            background-color: rgb(27, 26, 25);
-            border-radius: 5px;
-        }
+.tablero {
+    margin-top: 25px;
+    margin-left: 25px;
+}
 
-        #MuertasB{
-            width: 60px;
-            height: 270px;
-            padding: 0%;
-            margin: 0%;
-            margin-top: 3px;
-            margin-left: 5px;
-            background-color: rgb(223, 213, 213);
-            border-radius: 5px;
-        }
+#MuertasDiv {
+    width: 70px;
+    height: 550px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 6%;
+    box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
+    border: 5px solid rgb(41, 0, 1);
+    border-radius: 1.5%;
+}
+
+#MuertasN {
+    width: 60px;
+    height: 270px;
+    margin: 0%;
+    margin-top: 3px;
+    margin-left: 5px;
+    padding: 0%;
+    background-color: rgb(27, 26, 25);
+    border-radius: 5px;
+}
+
+#MuertasB {
+    width: 60px;
+    height: 270px;
+    padding: 0%;
+    margin: 0%;
+    margin-top: 3px;
+    margin-left: 5px;
+    background-color: rgb(223, 213, 213);
+    border-radius: 5px;
+}
 
 /*Reloj*/
-   
-    #time{
-        width: 160px;
-        float: left;
-        margin-top: 20%;
-        margin-left: 1%;
-        padding: 20px;
-        border-radius: 7px;
-        background: none;
-        
-    }
 
-    #Reloj{
-        width: 150px;
-        height: 150px;
-        margin-left: 3.5px;
-        margin-bottom: 10px;
-        text-align: center;
-        font-size: 76px;
-        padding-left: 15px;
-        border-radius: 90px;
-        color: rgb(216, 216, 216);
-        background-color: rgb(200, 121, 65);
-        background: url("https://media.istockphoto.com/photos/brushed-dark-metal-texture-picture-id1155962535?k=20&m=1155962535&s=170667a&w=0&h=VkfeYWPTl1-koxSY8Foxr-I2R_YNbD9MUOiyDiVB_KE=") no-repeat center center fixed;
-        box-shadow: 5px 5px  rgb(41, 41, 41);
-        border: solid 3px rgb(41, 0, 1);
-        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
-    }
+#time {
+    width: 160px;
+    float: left;
+    margin-top: 20%;
+    margin-left: 1%;
+    padding: 20px;
+    border-radius: 7px;
+    background: none;
 
-    background-image{
-        width: 60px ;
-    }
+}
 
-    #TurnoDe{
-        width: 171px;
-        padding-bottom: 5px;
-        color: rgb(135, 67, 29);
-        text-align: center;
-        box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
-        font-size: 15px;
-        font-weight: bold;
-        background-color: #290001;
-    }
+#Reloj {
+    width: 150px;
+    height: 150px;
+    margin-left: 3.5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 76px;
+    padding-left: 15px;
+    border-radius: 90px;
+    color: rgb(216, 216, 216);
+    background-color: rgb(200, 121, 65);
+    background: url("https://media.istockphoto.com/photos/brushed-dark-metal-texture-picture-id1155962535?k=20&m=1155962535&s=170667a&w=0&h=VkfeYWPTl1-koxSY8Foxr-I2R_YNbD9MUOiyDiVB_KE=") no-repeat center center fixed;
+    box-shadow: 5px 5px rgb(41, 41, 41);
+    border: solid 3px rgb(41, 0, 1);
+    box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
+}
+
+background-image {
+    width: 60px;
+}
+
+#TurnoDe {
+    width: 171px;
+    padding-bottom: 5px;
+    color: rgb(135, 67, 29);
+    text-align: center;
+    box-shadow: 5px 5px 10px 2px rgba(24, 23, 23, 0.747);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #290001;
+}
 
 /*Fin de Reloj*/
 
 
 /*Tablero*/
- .col{
+.col {
     width: 70px;
     float: left;
     background-color: red;
- } 
- .espacio{
+}
+
+.espacio {
     width: 70px;
     height: 70px;
     display: block;
     padding: 0;
     margin: 0;
- }
- .claro{
+}
+
+.claro {
     background-color: wheat;
- }
- .oscuro{
+}
+
+.oscuro {
     background-color: darkslategray;
- }
- .resalto{
+}
+
+.resalto {
     background-color: rgba(54, 255, 47, 0.75);
- }
- .capturable{
+}
+
+.capturable {
     background-color: rgba(220, 20, 60, 0.75);
- }
- .magma{
+}
+
+.magma {
     background-image: url(../img/Eventos/Magma.png);
     background-size: cover;
     margin: 0%;
     padding: 0%;
 }
 
+#MuertasB>img {
+    width: 30px;
+    height: 30px;
+}
 
- 
+#MuertasN>img {
+    width: 30px;
+    height: 30px;
+}
