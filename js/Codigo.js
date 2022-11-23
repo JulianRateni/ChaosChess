@@ -41,6 +41,7 @@ $("Document").ready(function () {
     let DobleRoll = false
     let Intercambio = false
     let rep = false
+    var victoria = false
 
     function renderTablero() {
         for (y = 0; y < 8; y++) {
@@ -121,11 +122,24 @@ $("Document").ready(function () {
 
     function moverOCapturar(OGPos, pieza, SeMueveOCapturaA) {
         $(OGPos).empty().html(` `)
-        var victoria = false
         console.log(piezaID.slice(1, 3).slice(-1))
-        var espacioACapturar = $(SeMueveOCapturaA).html().slice(10, 13)
-        if (espacioACapturar.slice(0, 1) == "R") {
-            victoria = true
+        var ListaKillB = $("#MuertasB").html()
+        var ListaKillN = $("#MuertasN").html()
+        var piezaKill = $(SeMueveOCapturaA + "> img").attr("id")
+        console.log(piezaKill)
+        if (piezaKill != undefined) {
+            if (piezaKill.slice(-1) == "C") {
+                piezaKill = piezaKill.slice(0, 3)
+            }
+            if (piezaKill.slice(-1) == "B") {
+                $("#MuertasN").html(ListaKillN + ` <img id="` + piezaKill + `" src="img/Muertas/` + piezaKill + `.png">`)
+            }
+            if (piezaKill.slice(-1) == "N") {
+                $("#MuertasB").html(ListaKillB + ` <img id="` + piezaKill + `" src="img/Muertas/` + piezaKill + `.png">`)
+            }
+            if (piezaKill.slice(1, 2) == "R") {
+                victoria = true
+            }
         }
         if (piezaID.slice(1, 3).slice(-1) == "C") {
             $(SeMueveOCapturaA).empty().html(pieza.slice(0, 12) + `" ` + pieza.slice(14, 33) + `.png">`)
@@ -375,12 +389,10 @@ $("Document").ready(function () {
             case 19: alert("Resurreccion"); break;
             case 20: alert("Prosperidad"); Evento20(); break;
         }
-        setTimeout(function () {
             if (DobleRoll == false && Intercambio == false) {
                 CambioDado();
                 return;
             }
-        }, 500)
     }
 
     function Evento2() {
@@ -427,6 +439,11 @@ $("Document").ready(function () {
             if (piezaKill.slice(-1) == "C") {
                 piezaKill = piezaKill.slice(0, 3)
             }
+            if (piezaKill.slice(1, 2) == "R") {
+                alert("un jugador gano, todavia no se quien :^p");
+                window.location.reload()
+                return;
+            }
             if (piezaKill.slice(-1) == "B") {
                 $("#MuertasN").html(ListaKillN + ` <img id="` + piezaKill + `" src="img/Muertas/` + piezaKill + `.png">`)
             }
@@ -465,6 +482,11 @@ $("Document").ready(function () {
             var piezaKill = $(this).attr("id")
             if (piezaKill.slice(-1) == "C") {
                 piezaKill = piezaKill.slice(0, 3)
+            }
+            if (piezaKill.slice(1, 2) == "R") {
+                alert("un jugador gano, todavia no se quien :^p");
+                window.location.reload()
+                return;
             }
             if (piezaKill.slice(-1) == "B") {
                 $("#MuertasN").html(ListaKillN + ` <img id="` + piezaKill + `" src="img/Muertas/` + piezaKill + `.png">`)
@@ -506,6 +528,11 @@ $("Document").ready(function () {
             var piezaKill = $(this).attr("id")
             if (piezaKill.slice(-1) == "C") {
                 piezaKill = piezaKill.slice(0, 3)
+            }
+            if (piezaKill.slice(1, 2) == "R") {
+                alert("un jugador gano, todavia no se quien :^p");
+                window.location.reload()
+                return;
             }
             if (piezaKill.slice(-1) == "B") {
                 $("#MuertasN").html(ListaKillN + ` <img id="` + piezaKill + `" src="img/Muertas/` + piezaKill + `.png">`)
@@ -550,7 +577,7 @@ $("Document").ready(function () {
 
     function TurnoDado() {
         $("#TurnoDe").val("Turno de: Dado");
-        var Evento = /*D20Normal[Math.floor(Math.random()*78)]*/ 8
+        var Evento = D20Normal[Math.floor(Math.random() * 78)]
         $("#Eventoimg").attr("src", "img/Eventos/" + Evento + ".png")
         if (Dadopara) {
             $("#divCard").attr("class", "container blanco")
